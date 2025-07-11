@@ -1,0 +1,346 @@
+{
+  "categories": [
+    {
+      "id": "ai-hot",
+      "name": "AI热门工具",
+      "icon": "fire",
+      "children": []
+    },
+    {
+      "id": "ai-text",
+      "name": "AI文本工具",
+      "icon": "file-text",
+      "children": [
+        {
+          "id": "ai-writing",
+          "name": "AI写作工具",
+          "icon": "pen-tool"
+        },
+        {
+          "id": "ai-thesis",
+          "name": "AI论文工具",
+          "icon": "book"
+        },
+        {
+          "id": "ai-content-detection",
+          "name": "AI内容检测",
+          "icon": "shield"
+        },
+        {
+          "id": "ai-novel",
+          "name": "AI写小说",
+          "icon": "book-open"
+        },
+        {
+          "id": "ai-official-doc",
+          "name": "AI公文写作",
+          "icon": "file"
+        },
+        {
+          "id": "ai-chatbot",
+          "name": "AI聊天机器人",
+          "icon": "message-circle"
+        },
+        {
+          "id": "ai-prompt",
+          "name": "Prompt提示词",
+          "icon": "key"
+        },
+        {
+          "id": "ai-knowledge",
+          "name": "AI知识库",
+          "icon": "database"
+        },
+        {
+          "id": "ai-search",
+          "name": "AI搜索引擎",
+          "icon": "search"
+        }
+      ]
+    },
+    {
+      "id": "ai-image",
+      "name": "AI图片工具",
+      "icon": "image",
+      "children": [
+        {
+          "id": "ai-drawing",
+          "name": "AI绘画",
+          "icon": "brush"
+        },
+        {
+          "id": "ai-product",
+          "name": "AI商品图",
+          "icon": "shopping-bag"
+        },
+        {
+          "id": "ai-model",
+          "name": "AI模特生成",
+          "icon": "user"
+        },
+        {
+          "id": "ai-avatar",
+          "name": "AI头像生成",
+          "icon": "user-circle"
+        },
+        {
+          "id": "ai-3d",
+          "name": "AI 3D建模",
+          "icon": "box"
+        },
+        {
+          "id": "ai-image-enhance",
+          "name": "AI图像增强",
+          "icon": "zap"
+        },
+        {
+          "id": "ai-logo",
+          "name": "AI Logo设计",
+          "icon": "tag"
+        }
+      ]
+    },
+    {
+      "id": "ai-video",
+      "name": "AI视频工具",
+      "icon": "video",
+      "children": [
+        {
+          "id": "ai-video-gen",
+          "name": "AI视频生成",
+          "icon": "film"
+        },
+        {
+          "id": "ai-video-edit",
+          "name": "AI视频剪辑",
+          "icon": "scissors"
+        },
+        {
+          "id": "ai-digital-human",
+          "name": "AI虚拟数字人",
+          "icon": "user-plus"
+        },
+        {
+          "id": "ai-face-swap",
+          "name": "AI换脸",
+          "icon": "smile"
+        }
+      ]
+    },
+    {
+      "id": "ai-audio",
+      "name": "AI音频工具",
+      "icon": "music",
+      "children": [
+        {
+          "id": "ai-tts",
+          "name": "AI配音",
+          "icon": "mic"
+        },
+        {
+          "id": "ai-stt",
+          "name": "AI语音识别",
+          "icon": "type"
+        },
+        {
+          "id": "ai-voice-clone",
+          "name": "AI语音克隆",
+          "icon": "copy"
+        },
+        {
+          "id": "ai-music",
+          "name": "AI音乐生成",
+          "icon": "music"
+        }
+      ]
+    },
+    {
+      "id": "ai-dev",
+      "name": "AI开发编程",
+      "icon": "code",
+      "children": [
+        {
+          "id": "ai-programming",
+          "name": "AI编程工具",
+          "icon": "terminal"
+        },
+        {
+          "id": "ai-platform",
+          "name": "AI智能体平台",
+          "icon": "server"
+        },
+        {
+          "id": "ai-low-code",
+          "name": "AI无代码/低代码",
+          "icon": "layers"
+        }
+      ]
+    },
+    {
+      "id": "ai-office",
+      "name": "AI办公效率",
+      "icon": "briefcase",
+      "children": [
+        {
+          "id": "ai-ppt",
+          "name": "AI PPT",
+          "icon": "file-text"
+        },
+        {
+          "id": "ai-doc",
+          "name": "AI文档工具",
+          "icon": "file"
+        },
+        {
+          "id": "ai-data",
+          "name": "AI数据可视化",
+          "icon": "bar-chart"
+        }
+      ]
+    },
+    {
+      "id": "ai-learning",
+      "name": "AI学习平台",
+      "icon": "graduation-cap",
+      "children": [
+        {
+          "id": "ai-courses",
+          "name": "AI课程学习",
+          "icon": "book-open"
+        },
+        {
+          "id": "ai-competition",
+          "name": "AI竞赛",
+          "icon": "trophy"
+        }
+      ]
+    },
+    {
+      "id": "ai-news",
+      "name": "IT AI资讯",
+      "icon": "newspaper",
+      "children": [
+        {
+          "id": "ai-tech-news",
+          "name": "科技资讯",
+          "icon": "globe"
+        },
+        {
+          "id": "ai-community",
+          "name": "技术社区",
+          "icon": "users"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "description": "OpenAI开发的强大语言模型，支持自然对话",
+      "url": "https://chat.openai.com",
+      "imageUrl": "/images/chatgpt.png",
+      "categoryId": "ai-chatbot",
+      "tags": ["AI", "聊天", "语言模型"]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "description": "Anthropic开发的AI助手，提供有帮助、无害且诚实的交互",
+      "url": "https://claude.ai",
+      "imageUrl": "/images/claude.png",
+      "categoryId": "ai-chatbot",
+      "tags": ["AI", "聊天", "助手"]
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "description": "AI驱动的文本描述图像生成工具",
+      "url": "https://www.midjourney.com",
+      "imageUrl": "/images/midjourney.png",
+      "categoryId": "ai-drawing",
+      "tags": ["AI", "图像生成", "艺术"]
+    },
+    {
+      "id": "stable-diffusion",
+      "name": "Stable Diffusion",
+      "description": "开源的AI图像生成模型",
+      "url": "https://stability.ai",
+      "imageUrl": "/images/stable-diffusion.png",
+      "categoryId": "ai-drawing",
+      "tags": ["AI", "图像生成", "开源"]
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "description": "Notion中的AI写作和编辑助手",
+      "url": "https://notion.so",
+      "imageUrl": "/images/notion.png",
+      "categoryId": "ai-writing",
+      "tags": ["AI", "写作", "效率"]
+    },
+    {
+      "id": "xunfei-spark",
+      "name": "讯飞星火",
+      "description": "讯飞推出的免费全能AI助手",
+      "url": "https://xinghuo.xfyun.cn",
+      "imageUrl": "/images/xunfei.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "聊天", "助手"]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "description": "免费AI助手，具有强大的能力",
+      "url": "https://deepseek.com",
+      "imageUrl": "/images/deepseek.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "聊天", "免费"]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "description": "谷歌推出的多模态AI模型",
+      "url": "https://gemini.google.com",
+      "imageUrl": "/images/gemini.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "谷歌", "多模态"]
+    },
+    {
+      "id": "kaggle",
+      "name": "Kaggle",
+      "description": "数据科学和机器学习竞赛平台",
+      "url": "https://kaggle.com",
+      "imageUrl": "/images/kaggle.png",
+      "categoryId": "ai-competition",
+      "tags": ["AI", "数据科学", "竞赛"]
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera",
+      "description": "提供AI和机器学习课程的在线学习平台",
+      "url": "https://coursera.org",
+      "imageUrl": "/images/coursera.png",
+      "categoryId": "ai-courses",
+      "tags": ["AI", "学习", "课程"]
+    },
+    {
+      "id": "zhihu",
+      "name": "知乎",
+      "description": "中文问答平台，包含AI和技术讨论",
+      "url": "https://zhihu.com",
+      "imageUrl": "/images/zhihu.png",
+      "categoryId": "ai-community",
+      "tags": ["AI", "社区", "问答"]
+    },
+    {
+      "id": "36kr",
+      "name": "36氪",
+      "description": "关注AI和创新的科技新闻和创业平台",
+      "url": "https://36kr.com",
+      "imageUrl": "/images/36kr.png",
+      "categoryId": "ai-tech-news",
+      "tags": ["AI", "新闻", "科技"]
+    }
+  ]
+} 

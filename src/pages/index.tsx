@@ -1,9 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, ChevronDown, ChevronRight } from 'lucide-react';
-import navigationConfig from '@/config/navigation.json';
+import { Search, ChevronDown, ChevronRight, Globe } from 'lucide-react';
+import navigationConfigEn from '@/config/navigation.en.json';
+import navigationConfigZh from '@/config/navigation.zh.json';
+import { locales, Locale } from '@/config/locales';
+import { detectUserLocale } from '@/utils/geoLocation';
 
 // Types
 interface Category {
@@ -23,19 +27,78 @@ interface NavItem {
   tags: string[];
 }
 
+interface NavigationConfig {
+  categories: Category[];
+  items: NavItem[];
+}
+
 export default function Home() {
-  const { data: session } = useSession();
+  const router = useRouter();
+  const [session, setSession] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [currentLocale, setCurrentLocale] = useState<Locale>('en');
+  const [navigationConfig, setNavigationConfig] = useState<NavigationConfig>(navigationConfigEn);
   const searchRef = useRef<HTMLDivElement>(null);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // 检测用户语言
+    const initLocale = async () => {
+      const locale = await detectUserLocale();
+      setCurrentLocale(locale);
+      setNavigationConfig(locale === 'zh' ? navigationConfigZh : navigationConfigEn);
+    };
+    initLocale();
+
+    // 获取当前会话状态
+    const getSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setSession(session);
+    };
+
+    getSession();
+
+    // 监听认证状态变化
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  // 当语言改变时更新导航配置
+  useEffect(() => {
+    setNavigationConfig(currentLocale === 'zh' ? navigationConfigZh : navigationConfigEn);
+  }, [currentLocale]);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.push('/auth/login');
+  };
 
   // Close search results when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSearchResults(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // 添加点击外部关闭语言菜单的功能
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
+        setShowLanguageMenu(false);
       }
     }
 
@@ -163,6 +226,12 @@ export default function Home() {
     ));
   };
 
+  const toggleLanguage = (locale: Locale) => {
+    setCurrentLocale(locale);
+    setNavigationConfig(locale === 'zh' ? navigationConfigZh : navigationConfigEn);
+    setShowLanguageMenu(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -185,7 +254,7 @@ export default function Home() {
                 <input
                   type="text"
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="搜索..."
+                  placeholder={locales[currentLocale].search}
                   value={searchQuery}
                   onChange={handleSearchChange}
                   onFocus={() => setShowSearchResults(true)}
@@ -225,21 +294,63 @@ export default function Home() {
             </div>
 
             {/* User Menu */}
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
+              {/* Language Switcher */}
+              <div className="relative" ref={languageMenuRef}>
+                <button
+                  onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                  className="flex items-center space-x-2 px-3 py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  <Globe className="h-5 w-5" />
+                  <span>{currentLocale.toUpperCase()}</span>
+                </button>
+
+                {showLanguageMenu && (
+                  <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="py-1" role="menu">
+                      <button
+                        onClick={() => toggleLanguage('en')}
+                        className={`block w-full text-left px-4 py-2 text-sm ${
+                          currentLocale === 'en' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } hover:bg-gray-100`}
+                        role="menuitem"
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => toggleLanguage('zh')}
+                        className={`block w-full text-left px-4 py-2 text-sm ${
+                          currentLocale === 'zh' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                        } hover:bg-gray-100`}
+                        role="menuitem"
+                      >
+                        中文
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* User Menu */}
               {session ? (
-                <button
-                  onClick={() => signOut()}
-                  className="ml-4 px-4 py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  退出
-                </button>
+                <div className="flex items-center space-x-4">
+                  <span className="text-sm text-gray-700">
+                    {session.user.email}
+                  </span>
+                  <button
+                    onClick={handleSignOut}
+                    className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    {locales[currentLocale].logout}
+                  </button>
+                </div>
               ) : (
-                <button
-                  onClick={() => signIn()}
+                <Link
+                  href="/auth/login"
                   className="ml-4 px-4 py-2 text-sm text-gray-700 hover:text-gray-900"
                 >
-                  登录
-                </button>
+                  {locales[currentLocale].login}
+                </Link>
               )}
             </div>
           </div>

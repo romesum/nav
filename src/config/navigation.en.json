@@ -1,0 +1,346 @@
+{
+  "categories": [
+    {
+      "id": "ai-hot",
+      "name": "AI Hot Tools",
+      "icon": "fire",
+      "children": []
+    },
+    {
+      "id": "ai-text",
+      "name": "AI Text Tools",
+      "icon": "file-text",
+      "children": [
+        {
+          "id": "ai-writing",
+          "name": "AI Writing Tools",
+          "icon": "pen-tool"
+        },
+        {
+          "id": "ai-thesis",
+          "name": "AI Thesis Tools",
+          "icon": "book"
+        },
+        {
+          "id": "ai-content-detection",
+          "name": "AI Content Detection",
+          "icon": "shield"
+        },
+        {
+          "id": "ai-novel",
+          "name": "AI Novel Writing",
+          "icon": "book-open"
+        },
+        {
+          "id": "ai-official-doc",
+          "name": "AI Official Document Writing",
+          "icon": "file"
+        },
+        {
+          "id": "ai-chatbot",
+          "name": "AI Chatbot",
+          "icon": "message-circle"
+        },
+        {
+          "id": "ai-prompt",
+          "name": "AI Prompt Engineering",
+          "icon": "key"
+        },
+        {
+          "id": "ai-knowledge",
+          "name": "AI Knowledge Base",
+          "icon": "database"
+        },
+        {
+          "id": "ai-search",
+          "name": "AI Search Engine",
+          "icon": "search"
+        }
+      ]
+    },
+    {
+      "id": "ai-image",
+      "name": "AI Image Tools",
+      "icon": "image",
+      "children": [
+        {
+          "id": "ai-drawing",
+          "name": "AI Drawing",
+          "icon": "brush"
+        },
+        {
+          "id": "ai-product",
+          "name": "AI Product Image",
+          "icon": "shopping-bag"
+        },
+        {
+          "id": "ai-model",
+          "name": "AI Model Generation",
+          "icon": "user"
+        },
+        {
+          "id": "ai-avatar",
+          "name": "AI Avatar Generation",
+          "icon": "user-circle"
+        },
+        {
+          "id": "ai-3d",
+          "name": "AI 3D Modeling",
+          "icon": "box"
+        },
+        {
+          "id": "ai-image-enhance",
+          "name": "AI Image Enhancement",
+          "icon": "zap"
+        },
+        {
+          "id": "ai-logo",
+          "name": "AI Logo Design",
+          "icon": "tag"
+        }
+      ]
+    },
+    {
+      "id": "ai-video",
+      "name": "AI Video Tools",
+      "icon": "video",
+      "children": [
+        {
+          "id": "ai-video-gen",
+          "name": "AI Video Generation",
+          "icon": "film"
+        },
+        {
+          "id": "ai-video-edit",
+          "name": "AI Video Editing",
+          "icon": "scissors"
+        },
+        {
+          "id": "ai-digital-human",
+          "name": "AI Digital Human",
+          "icon": "user-plus"
+        },
+        {
+          "id": "ai-face-swap",
+          "name": "AI Face Swap",
+          "icon": "smile"
+        }
+      ]
+    },
+    {
+      "id": "ai-audio",
+      "name": "AI Audio Tools",
+      "icon": "music",
+      "children": [
+        {
+          "id": "ai-tts",
+          "name": "AI Text to Speech",
+          "icon": "mic"
+        },
+        {
+          "id": "ai-stt",
+          "name": "AI Speech to Text",
+          "icon": "type"
+        },
+        {
+          "id": "ai-voice-clone",
+          "name": "AI Voice Cloning",
+          "icon": "copy"
+        },
+        {
+          "id": "ai-music",
+          "name": "AI Music Generation",
+          "icon": "music"
+        }
+      ]
+    },
+    {
+      "id": "ai-dev",
+      "name": "AI Development",
+      "icon": "code",
+      "children": [
+        {
+          "id": "ai-programming",
+          "name": "AI Programming Tools",
+          "icon": "terminal"
+        },
+        {
+          "id": "ai-platform",
+          "name": "AI Platform",
+          "icon": "server"
+        },
+        {
+          "id": "ai-low-code",
+          "name": "AI Low/No Code",
+          "icon": "layers"
+        }
+      ]
+    },
+    {
+      "id": "ai-office",
+      "name": "AI Office Tools",
+      "icon": "briefcase",
+      "children": [
+        {
+          "id": "ai-ppt",
+          "name": "AI PPT",
+          "icon": "file-text"
+        },
+        {
+          "id": "ai-doc",
+          "name": "AI Document Tools",
+          "icon": "file"
+        },
+        {
+          "id": "ai-data",
+          "name": "AI Data Visualization",
+          "icon": "bar-chart"
+        }
+      ]
+    },
+    {
+      "id": "ai-learning",
+      "name": "AI Learning",
+      "icon": "graduation-cap",
+      "children": [
+        {
+          "id": "ai-courses",
+          "name": "AI Courses",
+          "icon": "book-open"
+        },
+        {
+          "id": "ai-competition",
+          "name": "AI Competitions",
+          "icon": "trophy"
+        }
+      ]
+    },
+    {
+      "id": "ai-news",
+      "name": "AI News",
+      "icon": "newspaper",
+      "children": [
+        {
+          "id": "ai-tech-news",
+          "name": "AI Tech News",
+          "icon": "globe"
+        },
+        {
+          "id": "ai-community",
+          "name": "AI Community",
+          "icon": "users"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "description": "OpenAI's powerful language model for natural conversations",
+      "url": "https://chat.openai.com",
+      "imageUrl": "/images/chatgpt.png",
+      "categoryId": "ai-chatbot",
+      "tags": ["AI", "Chat", "Language Model"]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "description": "Anthropic's AI assistant for helpful, harmless, and honest interactions",
+      "url": "https://claude.ai",
+      "imageUrl": "/images/claude.png",
+      "categoryId": "ai-chatbot",
+      "tags": ["AI", "Chat", "Assistant"]
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "description": "AI-powered image generation from text descriptions",
+      "url": "https://www.midjourney.com",
+      "imageUrl": "/images/midjourney.png",
+      "categoryId": "ai-drawing",
+      "tags": ["AI", "Image Generation", "Art"]
+    },
+    {
+      "id": "stable-diffusion",
+      "name": "Stable Diffusion",
+      "description": "Open source AI image generation model",
+      "url": "https://stability.ai",
+      "imageUrl": "/images/stable-diffusion.png",
+      "categoryId": "ai-drawing",
+      "tags": ["AI", "Image Generation", "Open Source"]
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "description": "AI-powered writing and editing assistant in Notion",
+      "url": "https://notion.so",
+      "imageUrl": "/images/notion.png",
+      "categoryId": "ai-writing",
+      "tags": ["AI", "Writing", "Productivity"]
+    },
+    {
+      "id": "xunfei-spark",
+      "name": "Xunfei Spark",
+      "description": "Free comprehensive AI assistant from iFlytek",
+      "url": "https://xinghuo.xfyun.cn",
+      "imageUrl": "/images/xunfei.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "Chat", "Assistant"]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "description": "Free AI assistant with advanced capabilities",
+      "url": "https://deepseek.com",
+      "imageUrl": "/images/deepseek.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "Chat", "Free"]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "description": "Google's advanced AI model for various tasks",
+      "url": "https://gemini.google.com",
+      "imageUrl": "/images/gemini.png",
+      "categoryId": "ai-hot",
+      "tags": ["AI", "Google", "Multimodal"]
+    },
+    {
+      "id": "kaggle",
+      "name": "Kaggle",
+      "description": "Platform for data science and machine learning competitions",
+      "url": "https://kaggle.com",
+      "imageUrl": "/images/kaggle.png",
+      "categoryId": "ai-competition",
+      "tags": ["AI", "Data Science", "Competition"]
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera",
+      "description": "Online learning platform with AI and machine learning courses",
+      "url": "https://coursera.org",
+      "imageUrl": "/images/coursera.png",
+      "categoryId": "ai-courses",
+      "tags": ["AI", "Learning", "Courses"]
+    },
+    {
+      "id": "zhihu",
+      "name": "Zhihu",
+      "description": "Chinese Q&A platform with AI and tech discussions",
+      "url": "https://zhihu.com",
+      "imageUrl": "/images/zhihu.png",
+      "categoryId": "ai-community",
+      "tags": ["AI", "Community", "Q&A"]
+    },
+    {
+      "id": "36kr",
+      "name": "36Kr",
+      "description": "Tech news and startup platform focusing on AI and innovation",
+      "url": "https://36kr.com",
+      "imageUrl": "/images/36kr.png",
+      "categoryId": "ai-tech-news",
+      "tags": ["AI", "News", "Tech"]
+    }
+  ]
+} 
